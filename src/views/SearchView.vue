@@ -3,7 +3,7 @@ import { defineComponent, ref,defineAsyncComponent } from 'vue';
 import RecipePreview from '../components/RecipePreview.vue';
 import recipes from '../sampleJsons/pastaSimple.json';
 import axios from 'axios';
-import type { RecipeSummary } from '../Interfaces/RecipeSummary';
+import type { Recipe } from '../Interfaces/Recipe';
 
     export default defineComponent({
         setup: ()=>{
@@ -33,7 +33,7 @@ import type { RecipeSummary } from '../Interfaces/RecipeSummary';
                 console.log(res)
                 this.searchResults = res.data.results;
             },
-            getDetails(recipe: RecipeSummary){
+            getDetails(recipe: Recipe){
                 this.$router.push({name:'recipe-detail', params:{ id : recipe.id}})
             }
         }

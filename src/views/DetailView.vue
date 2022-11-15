@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { useRouter, useRoute } from 'vue-router'
 import { onMounted, ref, defineAsyncComponent } from 'vue';
+import type { Ref } from 'vue';
 import  axios  from "axios";
 import type {Recipe} from '../Interfaces/Recipe';
 var route = useRoute();
     console.log(route.params)
 
     const id = route.params.id;
-    const recipe = ref({});
-    const steps = ref({});
+    const recipe: Ref<any> = ref({});
+    const steps: Ref<any> = ref({});
     onMounted(()=>{
-        console.log('ehilo')
+        
         getRecipeData();
     })
 

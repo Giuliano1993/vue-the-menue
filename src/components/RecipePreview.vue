@@ -1,9 +1,10 @@
 <script setup lang="ts">
+    import type { Recipe } from '../Interfaces/Recipe';
     const props = defineProps({
-        recipe: Object
+        recipe: {}
     })
     const emits = defineEmits<{
-        (e: 'pickedItem', item: Object) : void
+        (e: 'pickedItem', item: Recipe) : void
     }>()
     function foodSelected(){
         emits('pickedItem',props?.recipe || {} );

@@ -30,7 +30,7 @@ const renderedResuls = ref(props.searchResults);
     </div>
   </header>
   <main class="w-full pt-20">
-    <RouterView @changedSearch="search"/>
+    <RouterView/>
   </main>
 </template>
 
