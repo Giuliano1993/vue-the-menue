@@ -1,13 +1,14 @@
 <script setup lang="ts">
     import type { Recipe } from '../Interfaces/Recipe';
-    const props = defineProps({
-        recipe: {}
-    })
+    import { ref } from 'vue';
+    import type { Ref } from 'vue';
+    const props = defineProps(['recipe'])
+    const recipe: Recipe = props.recipe;
     const emits = defineEmits<{
         (e: 'pickedItem', item: Recipe) : void
     }>()
     function foodSelected(){
-        emits('pickedItem',props?.recipe || {} );
+        emits('pickedItem',recipe || {} );
     }
 </script>
 
