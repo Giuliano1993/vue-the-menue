@@ -11,9 +11,25 @@
 </script>
 
 <template>
-    <div class="flex bg-gray-200 border-b-orange-400 border-b-4 text-black items-center py-1 cursor-pointer" @click="foodSelected">
-        <div class="ml-2 w-10 h-10 rounded-full overflow-hidden bg-center bg-cover " :style="`background-image: url(${props?.recipe?.image ||''})`">
-        </div>
-        <h3 class="text-md ml-3">{{props?.recipe?.title || ''}}</h3>
+    <div @click="foodSelected" class="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1 cursor-pointer">
+        <figure>
+            <!-- Image -->
+            <img :src="(props?.recipe?.image ||'') + '?auto=format&fit=crop&w=400&q=50'" class="rounded-t h-72 w-full object-cover" />
+            <figcaption class="p-4">
+                <p class="text-lg mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300"  x-text="post.title">
+                    {{props?.recipe?.title || ''}}
+                </p>
+
+                <!-- Description -->
+                <small
+                    class="leading-5 text-gray-500 dark:text-gray-400" x-text="post.description" v-html="props?.recipe?.summary.substring(0,100) + '...' || ''">
+                    
+                    
+                </small>
+            </figcaption>
+        </figure>
     </div>
 </template>
+
+
+       

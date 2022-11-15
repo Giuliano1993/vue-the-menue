@@ -12,7 +12,7 @@ export default defineComponent({
     },
     methods: {
         searchIngredients(){
-            if(this.searchString != '') this.$emit('changed', this.searchString)
+            if(this.searchString != '') this.$emit('changedSearch', this.searchString)
         }
     }
 
@@ -20,5 +20,5 @@ export default defineComponent({
 </script>
 
 <template>
-    <input @change="searchIngredients()" v-model="searchString" type="text" class="rounded-lg h-6 bg-orange-300 focus:bg-orange-100 focus-visible:border-orange-600 text-black py-6 pl-2" placeholder="Search ingredients..."/>
+    <input @change="searchIngredients()" v-model="searchString" type="text" class="rounded-lg h-6 bg-orange-300 focus:bg-orange-100 focus-visible:border-orange-600 text-black py-6 pl-2 placeholder-gray-600 text-lg" placeholder="Search ingredients..."/>
 </template>

@@ -2,7 +2,7 @@
 import { useRouter, useRoute } from 'vue-router'
 import { onMounted, ref, defineAsyncComponent } from 'vue';
 import  axios  from "axios";
-import type {AxiosRequest} from '../Interfaces/AxiosRequest'
+import type {Recipe} from '../Interfaces/Recipe';
 var route = useRoute();
     console.log(route.params)
 
@@ -19,11 +19,10 @@ var route = useRoute();
             axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY}`),
             axios.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${import.meta.env.VITE_API_KEY}`)
         ])
-        
+
     }
 </script>
 <template>
-  <main class="w-full mt-20">
     <div class="flex w-full">
         <div>
             <img  :src="recipe?.data?.image || ''"/>
@@ -60,5 +59,4 @@ var route = useRoute();
             </div>
         </div>
     </div>
-  </main>
 </template>
