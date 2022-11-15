@@ -25,7 +25,6 @@ const renderedResuls = ref(props.searchResults);
           <SearchBar class="w-full " @changed="search"></SearchBar>
         </div>
         <nav class="flex w-1/3 justify-around">
-          <RouterLink class="text-white" to="/about">About</RouterLink>
           <RouterLink class="text-white" to="/search">Search</RouterLink>
         </nav>
     </div>
