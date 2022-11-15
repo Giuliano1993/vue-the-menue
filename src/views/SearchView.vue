@@ -19,7 +19,7 @@ import axios from 'axios';
         },
         updated: async function(){
             var prevQuery = this.searchQuery;
-            this.searchQuery = this.$route.query.query;
+            this.searchQuery = (this.$route.query.query != null && !Array.isArray(this.$route.query.query)) ? this.$route.query.query : '';
             if(this.searchQuery == '' || this.searchQuery == prevQuery) return ;
             this.doSearch()
         },
