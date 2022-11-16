@@ -41,8 +41,10 @@ import type { Recipe } from '../Interfaces/Recipe';
     })
 </script>
 <template>
-    <h1 class="text-2xl">You Searched: </h1>
-    <h2 class="text-xl">{{searchQuery}}</h2>
+    <div class="w-full text-center">
+        <h1 class="text-2xl text-orange-400 font-bold">You Searched: </h1>
+        <h2 class="text-xl text-white">{{searchQuery}}</h2>
+    </div>
     <div class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <RecipePreview v-show="searchResults" v-for="res in searchResults" :recipe="res" @pickedItem="getDetails"></RecipePreview>
     </div>
