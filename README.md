@@ -38,3 +38,4 @@ You can finde the documentarion of the APIs Used by this project at this [link](
  - [ ] re-implement the full search code ( axios call temporarily disabled for the search component for not exceeding the daily requests quota while developing and testsìing)
  - [ ] implementation of different type of search (by keyword, ingredients, cooking type, or advanced search using different nutritonal values and more)
  - [ ] implement designed graphs for nutrients
+ - [ ] in deatil view,make the ste steps, actually steps, showing one at a time in a nice carousel
