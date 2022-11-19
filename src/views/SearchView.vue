@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref,defineAsyncComponent } from 'vue';
 import RecipePreview from '../components/RecipePreview.vue';
-import recipes from '../sampleJsons/pastaSimple.json';
 import axios from 'axios';
 import type { Recipe } from '../Interfaces/Recipe';
 
